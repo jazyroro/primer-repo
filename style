@@ -1,0 +1,1056 @@
+/*
+Theme Name: Valle Nevado
+Theme URI: http://www.vallenevado.com/
+Author: Luis Berrios Coding | Felipe Aguilera Design
+Author URI: http://www.elemento.cl
+Description: Tema desarrollado especialmente para Valle Nevado
+Version: 1.0
+*/
+
+@import url("styles/extras.css");
+@import url("styles/normalize.css");
+@import url("styles/grid.css");
+@import url("styles/type.css");
+@import url("styles/slider.css");
+@import url("styles/es.css");
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Dosis);
+
+/* =Global
+----------------------------------------------- */
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+	
+body {
+	background: #fff;
+ 	position: relative;}
+	
+body.interior{
+	background: #eee;
+	}
+footer{
+	clear: both;
+	position: relative;
+	z-index: 10;
+	
+}
+body > #main {
+	height: auto;
+	min-height: 80%;
+	padding-bottom: 35px;
+}
+html, body, #main {
+	height: 100%;
+}
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: 'Dosis', sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto; }
+
+object,
+embed {
+  height: 100%; }
+
+img {
+  -ms-interpolation-mode: bicubic; }
+
+*:focus {
+    outline: 0;
+}
+
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
+  max-width: none !important; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-justify {
+  text-align: justify; }
+
+.hide {
+  display: none; }
+
+img {
+  display: block; }
+
+textarea {
+  height: auto;
+  min-height: 50px; }
+
+select {
+  width: 100%; }
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1em;
+}
+ul {
+	list-style: none;
+
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+	line-height: 1.2em
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, .8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-family: 'Dosis'
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa #bbb;
+	background-color: #42ADDA;
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb #bbb;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.sticky {
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.byline {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+	max-width: 100%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 .gallery-item {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .submit {
+	display: none;
+}
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .navigation-paging, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/* =Global Custom*/
+
+a:hover{ text-decoration: underline; color: inherit; }
+
+h1, h2, h3, h4, h5, h6 { color: #666;}
+h1 span, h1 span.h5 { text-transform: uppercase; display: inline-block; float: right; color: #1A6D92; font-weight: 700;}
+h2 span { text-transform: uppercase; display: inline-block; float: right; color: #999999; }
+
+h3 li { font-size: 0.6em; width: auto;}
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+.alternate, .alternate h4, .alternate h1, .alternate h6, .alternate span { color: #FFF;}
+.interior .alternate, .interior .alternate h4, .interior .alternate h1, .interior .alternate h6, .interior .alternate span { color: #333;}
+.alternate h5, .alternate .h5, .alternate .icons h1 { text-transform: uppercase; color: #FFF; font-weight: 700;}
+.sub-menu { display: none;}
+
+
+
+.seccion { padding-top: 10px; padding-bottom: 10px }
+.seccion.relacionados li img { float:left; margin-right:20px;}
+.seccion.separacion:nth-child(1) { background: #FFF !important }
+.seccion.separacion:nth-last-child(even) { background: #F5F7FA }
+.seccion.separacion:nth-last-child(3) { background: #F9FAFC }
+
+.interior .seccion.separacion:nth-child(1) { background: none !important; }
+.interior .seccion.separacion:nth-last-child(even) { background: none; }
+.interior .seccion.separacion:nth-last-child(3) { background: none; }
+
+.separacion { border-bottom: 1px solid #CFD5E1 }
+
+#main { position: relative; padding-top: 105px }
+
+.blog ul,
+	#indicadores .idioma ul,
+	#indicadores .social ul { margin:0 0 30px 0;padding:0;list-style: none}
+
+#informacion-montana { position: relative; z-index: 2;width: 48%;}
+
+.home #informacion-montana > div.row { padding-top: 60px;}
+#informacion-montana .icons h6, #informacion-montana .icons .h6 { font-weight: 400; }
+#informacion-montana .icons h1 { font-weight: 300 }
+#informacion-montana a { color: inherit;}
+#informacion-montana.informacion-montana-home .large-12 > h1 { margin-top: 50px;}
+#informacion-montana .large-12 { padding-left: 1.5em; padding-right: 1.5em; }
+
+.site-footer { background-color: #005077; color: #FFF; }
+.site-footer header { background-color: #006B9F; border-bottom: 1px solid #70B9D8;}
+.site-footer header .row > div:first-child { padding-top: 15px;}
+.site-footer h1, .site-footer h3, .site-footer h5 { color: #FFF;}
+.site-footer h5 { text-transform: uppercase;}
+.site-footer .margen { margin-top: 55px}
+.site-footer header .calificanos{height: 45px; width: 100%;background: #e7e7e7;}
+.site-footer header .calificanos a {display: inline-block;float: right;margin-top: 10px;}
+.icons img { float: left; margin: 0px 20px 40px 0; }
+.icons h6, .icons .h6, .icons .h5, .icons h5, .icons h1 { clear:right; }
+.icons .clima {
+	width: 6.857em;
+	height: 6.857em;
+	display: block;
+    float: left;
+	margin-right: 2.857em;
+	margin-left: 1.071em;
+	background-image: url('img/icons/weather-clima-vn.png') ;
+	background-repeat: no-repeat;
+}
+.clima.despejado { background-position: 0 0;}
+.clima.nevando { background-position: -5.34em 0;}
+.clima.nublado { background-position: -10.34em 0;}
+.clima.parcial { background-position: -15.9em 0;}
+.icons h5 { text-transform: uppercase; font-weight: 700;}
+
+.webcam { position: relative;}
+.webcam h5 { text-align: center; position: relative; top: -30px;}
+
+.partners li, .marcas-asociadas li { height: 60px}
+.partners li a, .marcas-asociadas li a { display: block; height: inherit; width: inherit;}
+
+.marcas-asociadas { margin-top: 7px}
+.marcas-asociadas h1 span { color: #FFF; display: inline; float: none;}
+.marcas-asociadas li {
+	background-image: url('img/juntos-somos-mejores-sprite.png');
+	width: 117px;}
+.marcas-asociadas li.marca1 { background-position: 0 0;}
+.marcas-asociadas li.marca2 { background-position: -117px 0;}
+.marcas-asociadas li.marca3 { background-position: -234px 0;}
+.marcas-asociadas li.marca4 { background-position: -351px 0;}
+.marcas-asociadas li.marca5 { background-position: -468px 0;}
+.marcas-asociadas li.marca6 { background-position: -585px 0;}
+.marcas-asociadas li.marca7 { background-position: -702px 0;}
+.marcas-asociadas li.marca8 { background-position: -819px 0;}
+
+.partners li { background-image: url('img/related-partners-sprite.png'); width: 140px }
+.partners li:first-child { margin-right: 20px}
+.partners li.marca1 { background-position: 0 0;}
+.partners li.marca2 { background-position: 140px 0;}
+
+#indicadores { height: 1.786em; line-height: 1.786em; background-color: #006B9F; color: #FFF; font-family: 'Dosis'; font-weight: 300;}
+#indicadores span, #indicadores strong { font-size: 0.929em}
+#indicadores h1 { color: #FFF;}
+#indicadores .clima { height: 1.786em}
+#indicadores .clima, #indicadores .clima span { display: inline-block; }
+#indicadores .clima span {
+	background-image: url('img/icons/weather-clima-vn.png');
+	width: 1.923em;
+	height: 1.923em;
+	-webkit-background-size: 95px 24px;
+    -o-background-size: 95px 24px;
+    -moz-background-size: 95px 24px;
+    background-size: 95px 24px;
+    background-repeat: no-repeat;
+    float: left;
+	margin: 0 5px;}
+
+.icon-header { display: inline-block; float:right; height: 15px}
+.icon-header nav { display: inline-block; }
+.icon-header .social { margin-right: 3px}
+.icon-header .social a { width: 16px; height: 16px; background-image: url('img/icons/iconos-redes.png'); background-repeat: no-repeat; display: block; margin-top: 3px}
+.icon-header .social a.facebook { background-position: 0 0 }
+.icon-header .social a.twitter { background-position: -16px 0 }
+.icon-header .social a.instagram { background-position: -32px 0 }
+.icon-header .social a.youtube { background-position: -48px 0 }
+.icon-header .social a.vimeo { background-position: -64px 0 }
+.icon-header li { display: inline-block; margin-left: 5px; height: 15px }
+.icon-header .idioma a { width: 20px; height: 15px; background-image: url('img/icons/flags.png'); background-repeat: no-repeat; display: block; margin-top: 3px}
+.icon-header .idioma a.es { background-position: 0 0}
+.icon-header .idioma a.pt { background-position: -20px 0}
+.icon-header .idioma a.en { background-position: -40px 0}
+
+.clima span.despejado { background-position: 0 0;}
+.clima span.nevando { background-position: -1.786em 0;}
+.clima span.nublado { background-position: -50px 0;}
+.clima span.parcial { background-position: -75px 0;}
+
+#menu { height: 80px; background-color: #005077;}
+
+#logo { height: 80px }
+#logo img { margin: 10px 20px 10px 0;}
+
+#banner-home div.orbit-wrapper { margin: 0; }
+#banner-home .pjc-slideshow-container { margin: 0;}
+#banner-home .column, #banner-home .columns { padding: 0;}
+
+.booking.top {  margin-top:20px;margin-bottom: 20px; position: relative;}
+.booking.other, .booking label { color: #333;}
+.booking { font-family: 'Dosis'; max-width: 68.43em !important;  z-index: 10; border-bottom: 1px solid #CFD5E1; height: 90px; background-color: #EFF7FA  }
+.booking header, .booking header h6 { color: #FFF;}
+.booking header { height: 30px; background-color: #006B9F; padding-top: 3px; }
+.booking header h6 { text-transform: uppercase; font-weight: 400; text-indent: 10px }
+.booking header li { padding: 0 1.786em;}
+.booking header span { display: none; margin: auto; margin-top: -4px; height: 0; width: 0; border-top: 5px solid transparent; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #EFF7FA;}
+.booking header a:hover span, .booking header .on span { display: block;}
+.booking .column, .booking .columns { padding: 0;}
+.booking .row { margin: 0; font-size: 0.85em;}
+.booking h4 { font-weight: 700; font-family: 'Dosis';}
+.booking .contacto-telefonico { padding: 5px 10px}
+
+.vallenevado { background-color: #009CE8; border-top: 1px solid #0DB0FF; padding: 0px;}
+.interior .vallenevado{background-color: initial;border-bottom: 1px solid #ccc;border-top: 0px solid;}
+#vallenevado h1 span a { color: #FFF; }
+#vallenevado.vallenevado li {  margin-bottom: 30px; border-bottom:0px;}
+#vallenevado.vallenevado li:first-child { border: none}
+#vallenevado img { float: left }
+#vallenevado .novedades { line-height: 1.300em; padding: 0px;padding-bottom: 10px;}
+#vallenevado .novedades img { margin-right: 20px;width: 460px;height: auto;}
+#vallenevado .novedades h4 { /*font-weight: 700;*/ margin: 0; color: #FFF;margin-top: 25px;font-size: 1.8em ;margin-bottom: 15px;}
+#vallenevado .novedades a { color: inherit;}
+#vallenevado .novedades .more{background: url('img/icons/icon-more-novedades.png') no-repeat; height: 24px;width: 24px;display: inline-block;margin-left: 94%;margin-top: 10px;}
+
+#vallenevado .novedades .arrow {border: solid 20px transparent;border-right-color: #2FB9FC;position: absolute;top: 50%;bottom: 50%;left: -60px;}
+#vallenevado .novedades .columns{padding: 0px;}
+#vallenevado .novedades .columns + .columns{padding-left: 10px;padding-bottom: 20px;padding-right: 20px;}
+.destacado .wrap { border-bottom: 1px solid #CFD5E1; position: relative; background: #FFF; color: #666666; overflow: hidden; text-align:center}
+.destacado .wrap h3, .destacado .wrap h4, .destacado .wrap h5, .destacado .wrap h6 { padding: 5px 10px; margin: 0; text-align: center; width: 100%;}
+.destacado .wrap span { display: block}
+.destacado .wrap span,
+.marcas-asociadas h1 span { font-size: 14px; font-family: 'Dosis';margin-top:6px; }
+.destacado.alt .wrap span { font-size: 1em }
+.destacado .wrap a { white-space:nowrap; }
+.destacado .wrap h3, .destacado .wrap h4, .destacado .wrap h5, .destacado .wrap h6, .destacado .wrap a {
+	transition: color 0.5s;
+	-webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s
+}
+.destacado:hover .wrap { background-color: #5EC9FD;}
+.destacado a img { border-bottom: 5px solid #5EC9FD}
+.destacado:hover h3, .destacado:hover a { color: #FFF; }
+.destacado div a, .icons p a { color: #209DDA;}
+.destacado div a { font-size: 0.722em}
+
+#destacados.vallenevado .webcam { height: 210px;}
+#destacados.vallenevado .webcam img { border-bottom: 5px solid #5EC9FD}
+/*.destacados { background-color: #FEFEFF; }*/
+
+#actividades p { padding-right: 70px}
+#actividades .destacado div a { font-size: 1em}
+
+#alojamiento { background-color: #F5F7FA}
+#alojamiento .destacado .wrap { height: 20em}
+
+#gastronomia { background-color: #F9FAFC }
+#gastronomia .restaurantes .destacado .wrap { height: 20em}
+
+#comunidad h1 { font-weight: 300}
+#comunidad h2, #comunidad h2 span, #comunidad h2 a { color: #999;}
+
+.site-header { position: fixed; top: 0; width: 100%; z-index: 300; }
+.site-header .menu-header { margin-top: 1.486em}
+.site-header .menu > li { text-align:center; padding: 2px 13px; margin-left: 10px; position: relative; background: #005077;padding-right: 8px;padding-left: 8px;}
+
+#titulo { margin-top: 25px; border-bottom: 1px solid #CCC;}
+#titulo h1 { color: #333; }
+.titulo, #titulo h1 { font-size: 36px; }
+
+#reserva button { width: 190px; height: 45px; background: #006B9F; border: none; color: #FFF; text-transform: uppercase; padding: 0; font-size: 1em; text-shadow: none;}
+#reserva > div { margin-top: 7px; margin-right: 10px;}
+#reserva > div:first-child { margin-right: 0;}
+#reserva label { display: block; margin-bottom: 2px;}
+#reserva input, #reserva select { height: 25px;}
+
+.blog img { float: left; margin-right: 20px;}
+.blog li { display: block; clear:both; border-bottom: 1px solid #CFD5E1; margin-top: 15px; color: #7D7D7D;}
+.blog li:first-child { min-height: 140px; margin: 0}
+.blog a { color: inherit;}
+
+.pistas h5 > strong { text-transform: uppercase;}
+
+.blog { background: #F5F7FA;}
+.interior .blog{margin-top: 15px;}
+#comunidad .blog { background:none;margin:0 0 30px 0;}
+
+.columns iframe
+{
+	margin:0 0 30px 0;
+}
+
+#informacion-montana.primer-contenido { padding-top: 90px;}
+
+.searchform { color: #CFD5E1; border-bottom: 1px solid #CFD5E1; margin-bottom: 20px}
+.searchform input { border: none; width: 100%; }
+
+#comunidad .masonryItem, .masonryItem hr { width: 140px; margin: 4px}
+
+.shrink-text { letter-spacing: -1px}
+.vallenews-noticias-listado li { margin-bottom: 10px; padding: 5px 0;}
+.vallenews-noticias-listado li:hover { background: #CCC}
+
+.pista {
+	display:inline-block;
+	width: 15px;
+	height: 15px;
+	background-image: url('img/estado-de-pistas-sprite.gif');
+	background-repeat: no-repeat; }
+.pista.ayuda { display: block; text-indent: 20px}
+.pista.principiante { background-position: 0 0;}
+.pista.intermedio { background-position: 0 -15px;}
+.pista.avanzado { background-position: 0 -30px;}
+.pista.experto { background-position: 0 -45px;}
+.pista.estado-SI { background-position: 0 -60px;}
+.pista.estado-NO { background-position: 0 -75px;}
+
+.rev_slider_wrapper{ max-height: 440px;min-height:initial;-webkit-box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.51);-moz-box-shadow:0px 3px 3px 0px rgba(50, 50, 50, 0.51);box-shadow:0px 3px 3px 0px rgba(50, 50, 50, 0.51);}
+#Homepjcwrap  ul.orbit-bullets{bottom:40px !important;}
+#informacion-montana{float: left;}
+#informacion-montana-inmobiliaria {margin-bottom: 20px;overflow: hidden;}
+#informacion-montana-inmobiliaria .row .small-5{width:52%; font-size: 18px;}
+#informacion-montana-inmobiliaria .row .small-7 {width: 48%;font-size: 14px;padding-top:20px;}
+#informacion-montana-inmobiliaria .row .small-7 .small-5{width:100%;font-size: 14px;}
+#informacion-montana-inmobiliaria .icons .clima {margin-right:1em;margin-left: 0em;width: 44%;height: 90px;    }
+#informacion-montana-inmobiliaria .row .small-5 .seperador{border-top: 1px solid #368AB3;float: left;width: 100%;margin-top: 16px;margin-bottom: 15px;}
+#informacion-montana-inmobiliaria .temperatura-fahrenheit{font-size: 14px;}
+#informacion-montana-inmobiliaria .informacion-nieve{font-size:14px;margin-top: 15px;}
+#informacion-montana-inmobiliaria .informacion-nieve .cms{font-size: 28px;}
+#informacion-montana-inmobiliaria .informacion-nieve i{text-transform: uppercase;text-decoration: none;font-style: normal;}
+#informacion-montana-inmobiliaria ul{margin-top: 2px;float: left;padding-left: 6px;}
+#informacion-montana-inmobiliaria li {list-style: none;margin-bottom: 5px;}
+#informacion-montana-inmobiliaria  li a{font-size: 14px;text-transform: uppercase;}
+#informacion-inmobiliaria{background: #EEEEEE;min-height: 200px;width: 48%;float: left;margin-left: 4%; position: relative;min-height: 278px;}
+#informacion-montana-inmobiliaria .webcam{height: 95px; overflow: hidden;position: relative;}
+#informacion-montana-inmobiliaria h3{color: #313140;font-size: 14px; padding: 5px 10px;border-bottom:1px solid #DBDBEA ;}
+#informacion-montana-inmobiliaria .text{padding: 15px;padding-top: 5px;}
+#informacion-montana-inmobiliaria .text h4{font-size: 14px;color: #006B9F;font-weight: bold;padding-bottom: 15px;}
+#informacion-montana-inmobiliaria .text p{color: #747484;font-size: 14px;}
+#informacion-montana-inmobiliaria .text .more{position: absolute; right: 10px;bottom: 10px;color: #006B9F;}
+#informacion-inmobiliaria img{width: 100%}
+#menu-mobile{background: #005077;display: none}
+#menu-mobile .menu_button{color: #fff;font-size: 1.4em; text-align: right;display: block;padding: 25px;padding-bottom: 25px;overflow: hidden;position: relative;}
+#menu-mobile .menu_button:hover{text-decoration: none;}
+#menu-mobile .menu-item{font-size: 1em;border-top: 1px solid #42ADDA;}
+#menu-mobile .menu-mobile {display: none;}
+#menu-mobile ul li a {padding: 10px;display: block;}
+#menu-mobile ul ul{position: relative;float: inherit;width: 100%;display: block;top: 0px;box-shadow:none;-webkit-box-shadow:none;display: none;}
+#menu-mobile ul ul li{padding: 0px;}
+#menu-mobile ul ul li a{font-size: 1em;}
+#menu-mobile ul ul ul {left: inherit;}
+#menu-mobile ul ul li.menu-item-has-children > a{background: #23688a;}
+#menu-mobile ul li a img {margin: 0 auto;}
+#menu-mobile  .menu_button .icon {float: right;margin-right: 10px;margin-top: 8px;}
+#menu-mobile  .menu_button .text{float: right;}
+#menu-mobile  .menu_button .menu{margin-top: 10px;display: inline-block;}
+#menu-mobile .menu_button .icon .line {display: block;margin-bottom: 4px;width: 25px;border: 1px solid #fff;}
+#vallenevado .seccion-slidee h1{padding-left: 15px;}
+.seccion-slidee [class*="block-grid-"]{margin:0px;  }
+.seccion-slidee [class*="block-grid-"] > li{padding: 0px;margin:0 ;}
+.seccion-slidee [class*="block-grid-"] > li .wrap{margin: 0 15px 10px;}
+.seccion-slidee {overflow: hidden;}
+#menu-header .menu-item a:hover{text-decoration: none;} 
+#menu-header .menu-item a.menu-image-title-after.menu-image-not-hovered img, .menu-item a.menu-image-hovered.menu-image-title-after .menu-image-hover-wrapper {	margin: 0px auto;margin-bottom: 4px;padding: 0px;}
+#menu-header .menu-item > a{   display: block; text-align: left;} 
+#menu-header .menu-item-has-children  > a{background:url('img/icons/arrow-menu.png') center 45px no-repeat;padding-bottom: 10px;}
+#menu-header .sub-menu .menu-item-has-children  > a{padding-bottom: 0px;}
+#fixed-side{position: fixed;width: 378px;height: 112px;background: blue;color: #fff;top: 50%;z-index: 250;bottom: -50%;left:-344px;background: url('img/lateral.png') no-repeat;}
+#fixed-side .slideright{width:34px;height:80%;display:inline-block;float:right;}
+#fixed-side .icons .clima{width: 6.1em;height: 5.4em;background-size: 400%;margin-right:0em;margin-left: 0em;}
+#fixed-side .row{float: left;width: 24%;height: 80px;font-size: 13px;font-weight: bold;text-align: center;margin-top: 10px;}
+#fixed-side .row.border{border-left:1px solid #367594;border-right: 1px solid #367594;}
+#fixed-side .row .camara{margin:0 auto;margin-bottom:5px;opacity:0.7;}
+#fixed-side .row .reporte{margin:0 auto;margin-bottom:5px;opacity:1;margin-top:2px;}
+#developer{ background: #01344d;margin-top: 1.3em;padding-top: 10px;padding-bottom: 10px;}
+#developer span{ float:left;padding-top:4px;}
+
+.clearout {
+	height:20px;
+	clear:both;
+}
+
+ #flexiselDemo2{
+	display:none;
+} 
+
+.nbs-flexisel-container {
+    position:relative;
+    max-width:100%;
+}
+.nbs-flexisel-ul {
+    position:relative;
+    width:9999px;
+  
+    list-style-type:none;   
+    text-align:center;  
+}
+
+.nbs-flexisel-inner {
+    overflow:hidden;
+    float:left;
+    width:100%;
+  	position: relative;
+  	padding-bottom: 20px;
+  	margin-bottom: 20px;
+}
+
+.nbs-flexisel-item {
+    float:left;
+    margin:0px;
+    padding:0px;
+    cursor:pointer;
+    position:relative;
+    line-height:0px;
+}
+.nbs-flexisel-item img {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ 
+}
+
+/*** Navigation ***/
+
+.nbs-flexisel-nav-left,
+.nbs-flexisel-nav-right {
+    width: 22px;
+    height: 35px; 
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.5;
+}
+
+.nbs-flexisel-nav-left {
+   bottom: 0px;
+    left: 45%;
+   background: url("img/icons/left.png")  no-repeat;
+}
+.nbs-flexisel-nav-left:hover{
+	background-position: bottom;
+}
+.nbs-flexisel-nav-right {
+    bottom: 0px;
+    right: 45%;
+
+    background: url("img/icons/right.png") no-repeat;
+}
+.nbs-flexisel-nav-right:hover{
+	background-position: bottom;
+
+}
+
+.suscribete{
+	background:url("img/mail.png") left center no-repeat;
+	margin:0 0 0 25px;
+	display:inline-block; 
+	width:200px;
+	padding:0 0 0 30px;
+}
+
+@media only screen and (max-width: 1072px) {
+	#vallenevado .novedades .arrow{
+		border:0px;
+	}
+	#vallenevado .novedades a img{ 
+		width: 100%;
+		min-height: 38%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	body > #main{
+		padding-top:0px;
+	}
+	.site-header{
+		position: relative;
+	}
+	#menu-mobile{
+		display: block;
+	}
+	#menu{
+		display: none;
+	}
+	.
+	.icons h5{
+		display: block;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+	}
+	.icons img{
+		margin: 0px 20px 20px 10px;
+	}
+	.blog img{
+		width: 100%;
+	}
+	#fixed-side{
+		display: none;
+	}
+}
+@media only screen and (max-width: 780px) {
+
+  #informacion-montana-inmobiliaria ul{
+  	padding-left: 0px;
+  	width: 100%;
+  }
+  #vallenevado .seccion-slidee{
+  	width: 96%
+  }
+  #informacion-montana-inmobiliaria .wp_bannerize_home ul img{
+  	width: 100%
+  }
+  body #main .mobilehide {
+	display: none;
+   }
+
+  #reserva > div {
+    margin-bottom: 10px;
+  }
+  
+  #informacion-montana{
+    	width: 100%;
+       margin: 0 ;
+       margin-top: 2%;
+  }
+  #informacion-inmobiliaria {
+    width: 100%;
+    margin: 0 ;
+         margin-top: 2%;
+  }
+
+ .icon-verano{display: none;}
+  #informacion-montana-inmobiliaria .icons .clima{
+    	width: 110px;
+
+    }
+	.partners li:first-child {
+	    margin-right: 0px;
+	}
+	
+	#indicadores > .row  .social{
+		display: none;
+	}
+	.site-header .menu-header{
+		margin-top: 1em;
+	}
+	#comunidad .iframe{
+		width: 100% !important;
+	}
+
+	.nbs-flexisel-nav-left {
+	
+	    left: 42.5%;
+
+	}
+
+	.nbs-flexisel-nav-right {
+	   
+	    right: 42.5%;	  
+	}
+	.suscribete{
+		margin:0 0 0 25px;
+	}
+}
+@media only screen and (max-width: 600px){
+	#indicadores > .row > .ruta,
+	#indicadores > .row > span,
+	#indicadores > .row  .social{
+		display:none;
+	}
+	.small-block-grid-3 > li {
+		width: 100%;
+ 	 }
+ 	 .small-block-grid-3 > li.destacado img{
+ 	 	width: 100%;
+ 	 	height: 60%;
+ 	 }
+ 	 .small-block-grid-4 > li {
+ 	 	width: 100%;
+ 	 }
+ 	  .small-block-grid-4 > li.destacado img{
+ 	  	width: 100%;
+ 	 	height: 60%;
+ 	  }
+ 	 #vallenevado .small-block-grid-2 > li {
+ 	 	width: 100%;
+ 	 	margin-top: 10px;
+ 	 	margin-bottom: 10px;
+ 	 }
+ 	.row .small-4 {
+	    position: relative;
+	    width: 90.333%;
+	}
+	#twitter-widget-0 { 
+      width: 98% !important; 
+    }
+
+    .suscribete{
+		margin:0 0 0 5px;
+	}
+    
+   
+}
+@media only screen and (max-width: 480px){
+	body > #main .clima-column{
+    	width: 100%;
+		clear: both;
+		display: block;
+		padding-top: 10px;
+		overflow: hidden;
+		position: relative;
+    }
+    body #main .icons img{
+    	float: none;
+    }
+
+}
